@@ -6,9 +6,10 @@ class LanguagePack::Helpers::Nodebin
 
   def self.hardcoded_node_lts(arch: )
     arch = "x64" if arch == "amd64"
+    version = ENV.fetch("NODE_VERSION", NODE_VERSION)
     {
-      "number" => NODE_VERSION,
-      "url"    => "https://nodejs.org/download/release/v#{NODE_VERSION}/node-v#{NODE_VERSION}-linux-#{arch}.tar.gz",
+      "number" => version,
+      "url"    => "https://nodejs.org/download/release/v#{version}/node-v#{version}-linux-#{arch}.tar.gz",
     }
   end
 
